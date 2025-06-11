@@ -1,0 +1,4 @@
+[09-Jun-2025 21:14:26 Africa/Kigali] PHP Warning:  Undefined property: stdClass::$desciption in /home/abasareg/public_html/accountant/bankslip/save-approve-fines-payment.php on line 18
+[09-Jun-2025 21:15:58 Africa/Kigali] PHP Warning:  Undefined property: stdClass::$desciption in /home/abasareg/public_html/accountant/bankslip/save-approve-fines-payment.php on line 18
+[11-Jun-2025 11:03:03 Africa/Kigali] PHP Warning:  foreach() argument must be of type array|object, null given in /home/abasareg/public_html/accountant/bankslip/save-approve-loan-payment.php on line 28
+[11-Jun-2025 11:03:16 Africa/Kigali] PHP Warning:  foreach() argument must be of type array|object, null given in /home/abasareg/public_html/accountant/bankslip/save-approve-loan-payment.php on line 28

@@ -1,0 +1,42 @@
+
+.error{
+    color:red;
+    border:1px solid red;
+    /* margin-top:20px; */
+    padding:0 10px;
+    font-size:12px;
+  }
+  /*.error{
+    color:green;
+    border:1px solid green;
+    margin-top:20px;
+    padding:0 10px;
+    font-size:12px;
+    font-weight: bold;
+  }*/
+  
+  .error a{
+      color:green;
+      border:0px solid red;
+      text-decoration:none;
+  }
+  .error a:hover{
+      color:red;
+      text-decoration:underline;
+      border:0px solid red;
+  }
+  
+  .error-text{
+      color:red;
+      border:0px solid red;
+      margin-top:20px;
+      font-size:14px;
+  }
+  
+  .success{
+      color:green;
+      border:0px solid green;
+      margin-top:20px;
+      font-size:14px;
+  }
+  

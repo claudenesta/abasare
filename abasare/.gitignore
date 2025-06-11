@@ -1,0 +1,6 @@
+settings.ini
+composer.lock
+/vendor
+.DS_Store
+*.sql
+!db_changes.sql

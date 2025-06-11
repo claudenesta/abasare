@@ -1,0 +1,26 @@
+[29-Mar-2023 10:33:52 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[29-Mar-2023 10:33:52 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[29-Mar-2023 10:46:47 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[29-Mar-2023 10:46:47 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[29-Mar-2023 10:53:22 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[29-Mar-2023 10:53:22 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[18-May-2023 04:55:42 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[18-May-2023 04:55:42 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[18-May-2023 04:55:49 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[18-May-2023 04:55:49 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[18-May-2023 04:56:02 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[18-May-2023 04:56:02 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[01-Sep-2023 09:12:25 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[01-Sep-2023 09:12:25 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[01-Sep-2023 09:21:55 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[01-Sep-2023 09:21:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[18-Sep-2023 06:26:10 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[18-Sep-2023 06:26:10 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[03-Oct-2023 05:45:06 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[03-Oct-2023 05:45:06 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[06-Oct-2023 02:36:06 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[06-Oct-2023 02:36:06 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[06-Oct-2023 02:36:18 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[06-Oct-2023 02:36:18 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4
+[18-Oct-2023 11:52:54 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/abasareg/public_html/DBController.php on line 2
+[18-Oct-2023 11:52:54 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/abasareg/public_html/roles/view.php:1) in /home1/abasareg/public_html/header.php on line 4

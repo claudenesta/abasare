@@ -1,0 +1,195 @@
+[09-Jun-2025 18:03:37 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT   a.id,\n...', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:03:38 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT   a.id,\n...', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:03:39 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT   a.id,\n...', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:03:40 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT   a.id,\n...', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:03:40 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT   a.id,\n...', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:03:41 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT   a.id,\n...', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:13:47 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:14:57 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:14:59 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:14:59 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:15:01 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:16:34 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:16:34 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:19:38 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:19:38 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:19:40 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:21:17 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:06 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:07 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:07 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:08 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:08 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:34 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:36 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:45 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:27:57 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:28:57 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 18:33:48 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:06:13 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:18:51 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:24:02 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:26:24 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:26:28 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:26:29 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:26:30 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:26:30 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:26:30 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:31:52 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(4): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93
+[09-Jun-2025 19:37:26 Africa/Kigali] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_general_ci,IMPLICIT) for operation '=' in /home/abasareg/public_html/lib/db_function.php:93
+Stack trace:
+#0 /home/abasareg/public_html/member/fines/unpaid_fines.php(7): returnAllData(Object(MyPDO), 'SELECT a.id, a....', Array)
+#1 {main}
+  thrown in /home/abasareg/public_html/lib/db_function.php on line 93

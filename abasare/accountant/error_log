@@ -1,0 +1,110 @@
+[09-Jun-2025 14:26:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:26:49 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/header.php:1) in /home/abasareg/public_html/accountant/header.php on line 5
+[09-Jun-2025 14:27:10 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:27:10 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/header.php:1) in /home/abasareg/public_html/accountant/header.php on line 5
+[09-Jun-2025 14:27:43 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:27:43 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/header.php:1) in /home/abasareg/public_html/accountant/header.php on line 5
+[09-Jun-2025 14:31:04 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:31:04 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/header.php:1) in /home/abasareg/public_html/accountant/header.php on line 5
+[09-Jun-2025 14:34:58 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/DBController.php on line 2
+[09-Jun-2025 14:34:58 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:34:58 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/over_due_settings.php(3): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:35:07 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:35:07 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/list.php(2): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:35:11 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:35:11 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/saving_report.php(2): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:35:17 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:35:17 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/legder_setup.php(1): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:35:33 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/DBController.php on line 2
+[09-Jun-2025 14:35:33 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:35:33 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/over_due_settings.php(3): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:36:20 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/DBController.php on line 2
+[09-Jun-2025 14:36:20 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:36:20 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/over_due_settings.php(3): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:36:55 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:36:55 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/over_due_settings.php(2): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:36:59 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:36:59 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/over_due_settings.php(2): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:38:20 UTC] PHP Warning:  parse_ini_file(/home/abasareg/public_html/settings.ini): Failed to open stream: No such file or directory in /home/abasareg/public_html/DBController.php on line 16
+[09-Jun-2025 14:38:20 UTC] PHP Fatal error:  Uncaught Exception: Unable to open /home/abasareg/public_html/settings.ini. in /home/abasareg/public_html/DBController.php:17
+Stack trace:
+#0 /home/abasareg/public_html/DBController.php(94): DBController->__construct()
+#1 /home/abasareg/public_html/accountant/over_due_settings.php(8): include('/home/abasareg/...')
+#2 {main}
+  thrown in /home/abasareg/public_html/DBController.php on line 17
+[09-Jun-2025 14:46:19 UTC] PHP Warning:  Undefined variable $row in /home/abasareg/public_html/accountant/menu.php on line 10
+[09-Jun-2025 14:46:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/abasareg/public_html/accountant/menu.php on line 10
+[09-Jun-2025 14:46:24 UTC] PHP Warning:  Undefined variable $row in /home/abasareg/public_html/accountant/menu.php on line 10
+[09-Jun-2025 14:46:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/abasareg/public_html/accountant/menu.php on line 10
+[09-Jun-2025 14:46:28 UTC] PHP Warning:  Undefined variable $row in /home/abasareg/public_html/accountant/menu.php on line 10
+[09-Jun-2025 14:46:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/abasareg/public_html/accountant/menu.php on line 10
+[09-Jun-2025 14:49:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/DBController.php on line 2
+[09-Jun-2025 14:49:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:49:49 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/loan_status_report.php:7) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 14:50:08 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/DBController.php on line 2
+[09-Jun-2025 14:50:08 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:50:08 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/loan_status_report.php:7) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 14:50:18 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/DBController.php on line 2
+[09-Jun-2025 14:50:18 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 16:50:18 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/loan_status_report.php:7) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:30:33 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:30:33 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:31:48 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:31:48 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:31:56 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:31:56 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:32:05 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:32:05 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:32:42 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:32:42 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:32:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:32:49 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 18:33:01 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/abasareg/public_html/lib/db_function.php on line 3
+[09-Jun-2025 20:33:01 Africa/Kigali] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/abasareg/public_html/accountant/fines.php:1) in /home/abasareg/public_html/accountant/header.php on line 4
+[09-Jun-2025 21:24:31 UTC] PHP Warning:  Undefined array key "acc" in /home/abasareg/public_html/accountant/over_due_settings.php on line 3
+[10-Jun-2025 09:10:56 UTC] PHP Warning:  Undefined variable $row in /home/abasareg/public_html/accountant/menu.php on line 10
+[10-Jun-2025 09:10:56 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/abasareg/public_html/accountant/menu.php on line 10
+[11-Jun-2025 11:04:58 Africa/Kigali] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/abasareg/public_html/accountant/member_info.php on line 471
+[11-Jun-2025 11:04:58 Africa/Kigali] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/abasareg/public_html/accountant/member_info.php on line 536
+[11-Jun-2025 11:10:02 Africa/Kigali] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/abasareg/public_html/accountant/member_info.php on line 471
+[11-Jun-2025 11:10:02 Africa/Kigali] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/abasareg/public_html/accountant/member_info.php on line 536
