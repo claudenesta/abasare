@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Use require_once for critical files
-require_once('../../DBController.php');
+require_once('../DBController.php');
 
 
 //require_once('../../config.php');
