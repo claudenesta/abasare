@@ -57,7 +57,7 @@ include('menu.php');
           <div class="box">
             <div class="box-header">
               <!-- The Print button can use the ID from the session variable -->
-              <!--<a class="btn btn-warning btn-flat btn-sm" href="../dompdf/www/savings_statement.php?m_id=<?php echo $membe_id; ?>"><i class="fa fa-print"></i> Print My Report</a>-->
+              <a class="btn btn-warning btn-flat btn-sm" href="../dompdf/www/savings_statement.php?m_id=<?php echo $membe_id; ?>"><i class="fa fa-print"></i> Print My Report</a>
             <div class="text-right mb-3">
             <button class="btn btn-success btn-flat btn-sm" data-toggle="modal" data-target="#addPaymentModal"> <i class="fa fa-plus"></i> Add Payment </button>
             </div>
