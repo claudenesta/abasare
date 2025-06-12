@@ -71,10 +71,7 @@ $request = first($db, "SELECT a.id,
   </div>
 </form>
 
-<!-- <script type="text/javascript">
-
-
-
+<script type="text/javascript">
   $("#form_apply_loan").submit(function(e){
         e.preventDefault();
         var old_data = $("#submit_button").html();
@@ -110,52 +107,7 @@ $request = first($db, "SELECT a.id,
                 console.log(err);
                 $("#submit_button").html(old_data);
                 $("#submit_button").removeAttr("disabled");
-                toastr.error("Invalid response");
-            }
-        });
-    });
-</script> -->
-<script type="text/javascript">
-  $("#form_apply_loan").submit(function(e) {
-        e.preventDefault();
-        var old_data = $("#submit_button").html();
-        $("#submit_button").html('<i class="fas fa-sync fa-spin"></i> Saving...');
-        $("#submit_button").attr("disabled", "disabled");
-
-        $.ajax({
-            type: $(this).attr("method"),
-            url: $(this).attr("action"),
-            data: $(this).serialize(),
-            beforeSend: function() {
-                $("#submit_button").html('<i class="fas fa-sync fa-spin"></i> Saving...');
-            },
-            success: function(data) {
-                if (data.status == true) {
-                    refresh_url = "bankslip/index.php";
-                    refresh_target_containner = "loans_container";
-                    toastr.success(data.message);
-                    $("#modal_member").modal("hide");
-                } else {
-                    refresh_url = '';
-                    if (data.message) {
-                        toastr.warning(data.message);
-                    } else {
-                        toastr.error("The Server Responded with an unformatted message");
-                    }
-                }
-                $("#submit_button").html(old_data);
-                $("#submit_button").removeAttr("disabled");
-            },
-            error: function(xhr, status, error) {
-                console.log("AJAX Error: ", {
-                    status: status,
-                    error: error,
-                    responseText: xhr.responseText,
-                    statusCode: xhr.status
-                });
-                $("#submit_button").html(old_data);
-                $("#submit_button").removeAttr("disabled");
-                toastr.error("Failed to process request: " + (xhr.responseText || "Unknown error"));
+                toastr.error("Invalid Response");
             }
         });
     });

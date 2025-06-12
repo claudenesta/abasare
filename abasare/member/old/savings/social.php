@@ -2,18 +2,16 @@
 require_once "../../lib/db_function.php";
 
 $savings = returnAllData($db, "SELECT 	a.id,
-										a.member_id,
+										a.m_id,
 										a.amount,
-                                        a.type,
-                                        a.status,
-                                        a.comment,
-                                        a.created_at
-										FROM bank_slip_requests AS a
-										WHERE a.member_id = ?
-										AND a.type='savings'
-										ORDER BY a.id DESC
-										", [$_SESSION['user']['member_acc']]);
-                                        // $GET['year']);
+										a.month,
+										a.year,
+										a.confirmed_date
+										FROM sacial_saving AS a
+										WHERE a.m_id = ?
+										AND a.year = ?
+										ORDER BY a.year DESC, a.month DESC
+										", [$_SESSION['user']['member_acc'], $_GET['year']]);
 
 if(count($savings) > 0){
 	?>
@@ -23,8 +21,8 @@ if(count($savings) > 0){
 				<th>#</th>
 				<th>Contribution Month</th>
 				<th>Amount</th>
-				<th>Status</th>
-				<th>Comment</th>
+				<th>Confirmed</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -34,11 +32,10 @@ if(count($savings) > 0){
 				?>
 				<tr>
 					<td><?= $counter++ ?></td>
-					<td><?= (new DateTime($saving['created_at']))->format('F Y') ?></td>
+					<td><?= (new DateTime($saving['year']."-".($saving['month']<10?"0":"").$saving['month']."-01"))->format('F Y') ?></td>
 					<td class="text-right"><?= number_format($saving['amount']) ?> RWF</td>
-					<td><?= $saving['status']?></td>
-					<td><?= ($saving['status'] == 'Accepted' ? 'none' : $saving['comment'])?></td>
-
+					<td><?= !is_null($saving['confirmed_date'])?(new \DateTime($saving['confirmed_date']))->format('Y-m-d H:i:s'):"" ?></td>
+					<td></td>
 				</tr>
 				<?php
 			}

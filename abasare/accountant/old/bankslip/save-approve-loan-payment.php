@@ -36,8 +36,12 @@ try{
 	}
 	if(!is_null($last_affected)){
 		$next_payment = returnSingleField($db, "SELECT payment_number FROM lend_payments WHERE payment_number > ? AND status = ? AND borrower_loan_id=? ORDER BY id ASC LIMIT 0, 1", "payment_number", [$last_affected, "UNPAID",$data->borrower_loan_id]);
-
-		saveData($db, "UPDATE member_loans SET next_payment_id = ? WHERE id=?", [$next_payment, $data->borrower_loan_id]);
+		if(!is_null($next_payment)){
+			saveData($db, "UPDATE member_loans SET next_payment_id = ? WHERE id=?", [$next_payment, $data->borrower_loan_id]);
+		} else {
+			//Here make sure to close the loans as there is no next payment
+			saveData($db, "UPDATE member_loans SET status=? WHERE id=?", ["CLOSED", $data->borrower_loan_id]);
+		}
 
 		if($request['has_fine'] == 1){
 			$fine_info = json_decode($request['fine_data']);
@@ -45,6 +49,9 @@ try{
 			//here make sure to record fine information
 			saveData($db, "INSERT INTO interest SET member_id=?, amount=?, lend_payment_id=?, fine_overdue=?, ref_id=?, desciption=?, month=?, year=?, done_at=?", [$fine_info->member_id, $fine_info->amount, $fine_info->lend_payment_id, $fine_info->fine_overdue, $fine_info->lend_payment_id,$fine_info->desciption, $fine_info->month, $fine_info->year, $data->rdate]);
 		}
+	} else {
+		//Remark the installement as unpaid
+		saveData($db, "UPDATE lend_payments SET status=? WHERE payment_number=?", ["UNPAID", $data->payment_number]);
 	}
 
 	

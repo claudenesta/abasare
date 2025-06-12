@@ -2,51 +2,72 @@
 header("Content-Type:application/json");
 require_once "../../lib/db_function.php";
 
-
-if(empty($_POST['request_id'])){
-	echo json_encode(['status' => false, "message" => "No request to accept"]);
-	return;
+if(empty($_POST['request_id'])) {
+    echo json_encode(['status'=>false, 'message'=>'Missing request ID']);
+    return;
 }
-
 
 $db->beginTransaction();
-try{
+try {
+    // Get request data
+    $request = first($db,
+        "SELECT id, member_id, data, month_to_save_for, year_to_save_for, ref_number, amount, has_fine, fine_data, paid_at
+         FROM bank_slip_requests 
+         WHERE id = ?", 
+        [$_POST['request_id']]
+    );
+    
+    if(!$request) {
+        throw new Exception("Request not found");
+    }
+    
+    // Decode JSON data safely
+    $transaction_info = json_decode($request['data']);
+    if(!$transaction_info) {
+        throw new Exception("Invalid data format in request");
+    }
+    
+    // Ensure all required properties exist
+    if(!isset($transaction_info->sav_amount)) {
+        throw new Exception("Missing required property: sav_amount");
+    }
+    
+    // Set default values for potentially missing properties to avoid undefined property warnings
+    if(!isset($transaction_info->fine)) {
+        $transaction_info->fine = 0;
+    }
+    
+    if(!isset($transaction_info->days)) {
+        $transaction_info->days = 0;
+    }
+    
+    // Save to savings table
+    saveData($db,
+        "INSERT INTO saving 
+         SET member_id = ?, sav_amount = ?, month = ?, year = ?, done_at = NOW()",
+        [
+            $request['member_id'],
+            $transaction_info->sav_amount,
+            $request['month_to_save_for'],
+            $request['year_to_save_for']
+        ]
+    );
 
-	$request = first($db, "SELECT id, member_id, type, ref_number, amount, data, paid_at, has_fine, fine_data, created_at FROM bank_slip_requests WHERE id = ?", [$_POST['request_id']]);
+    // Update request status
+    saveData($db,
+        "UPDATE bank_slip_requests 
+         SET status = 'Accepted'
+         WHERE id = ?",
+        [$request['id']]
+    );
 
-	$data = json_decode($request['data']);
-
-	$comment = "";
-	if($data->fine > 0){
-		$comment = sprintf("Fine applied due to %s day%s of saving delay", $data->days, ($data->days > 1?"s":""));
-	}
-
-	//create saving records
-	$overdue_id = $data->overdue_id;
-	// var_dump($overdue_id);
-	if(!$overdue_id){
-		$overdue_id = NULL;
-	}
-	$fine = $data->fine;
-	// var_dump($fine);
-	if(is_null($fine)){
-		$fine = 0;
-	}
-	$saving_id = saveAndReturnID($db, "INSERT INTO saving SET member_id =?, overdue_id=?, sav_amount=?, month=?, year=?, fine=?, comment=?, done_at=?", [$request['member_id'], $overdue_id, $data->sav_amount, $data->month, $data->year, $fine , $comment, (new \DateTime())->format("Y-m-d H:i:s")]);
-
-	if($request['has_fine'] == 1){
-		$fine_info = json_decode($request['fine_data']);
-		saveData($db, "INSERT INTO interest SET member_id=?, amount=?, saving_id=?, saving_overdu=?, ref_id=?, desciption=?, month=?, year=?, done_at=?", [$fine_info->member_id, $fine_info->amount, $saving_id, $fine_info->saving_overdu, $saving_id, $fine_info->desciption, $fine_info->month, $fine_info->year, $request['created_at']]);
-	}
-
-	//Update request Operation
-	saveData($db, "UPDATE bank_slip_requests SET status = ? WHERE id = ?", ["Accepted", $_POST['request_id']]);
-
-	$db->commit();
-	echo json_encode(['status' => true, "message" => "Now the bankslip is well recorded" ]);
-	return;
-} catch(\Exception $e){
-	$db->rollback();
-	echo json_encode(['status' => false, "message" => $e->getMessage() ]);
-	return;
+    $db->commit();
+    echo json_encode([
+        'status' => true, 
+        'message' => "Successfully approved savings of " . number_format($request['amount']) . " RWF with reference " . $request['ref_number']
+    ]);
+} catch(Exception $e) {
+    $db->rollback();
+    echo json_encode(['status'=>false, 'message'=>$e->getMessage()]);
 }
+?>

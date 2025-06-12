@@ -1,282 +1,136 @@
+<!-- New_saving.php -->
 <?php
 require_once "../../lib/db_function.php";
 
-//check if we have any saving requests
-$savings_request = returnAllData($db, "SELECT type, ref_number, amount, data, paid_at FROM bank_slip_requests WHERE member_id = ? AND type = ? AND status=?", [$_SESSION['acc'], "savings", "Open"]);
+// Check for pending requests
+$savings_request = returnAllData($db, 
+    "SELECT type, ref_number, amount, data, paid_at 
+     FROM bank_slip_requests 
+     WHERE member_id = ? AND type = ? AND status=?", 
+    [$_SESSION['acc'], "savings", "Open"]);
 
-if(count($savings_request) > 0){
-    ?>
-    <div class="modal-header bg-primary">
+
+// Get minimum saving amount
+$minimum_saving = returnSingleField($db, 
+    "SELECT COALESCE(MAX(b.saving), 
+            (SELECT sav_amount FROM saving WHERE member_id = ? ORDER BY id DESC LIMIT 1)
+    ) as required_amount
+     FROM member_loans a
+     JOIN member_loan_settings b ON a.id = b.loan_id
+     WHERE a.status = 'ACTIVE' AND a.member_id = ?",
+    "required_amount",
+    [$_SESSION['user']['member_acc'], $_SESSION['user']['member_acc']]
+);
+
+// Current date for default selection
+$currentMonth = (int)date('n');
+$currentYear = (int)date('Y');
+?>
+
+<form action="savings/request_contribution.php" method="POST" id="form_apply_loan">
+    <div class="modal-header bg-green">
         <h4 class="modal-title">
-          <span style="color:white">Saving Request is pending please wait for its validation</span>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            <span style="color:white">New Savings Contribution</span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </h4>
     </div>
     <div class="modal-body">
         <div class="card card-info">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table" id="savings_request_table">
-                            <thead>
-                                <tr>
-                                    <th>Payment Date</th>
-                                    <th>Reference</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach($savings_request AS $request){
-                                    ?>
-                                    <tr>
-                                        <td><?= $request['paid_at'] ?></td>
-                                        <td><?= $request['ref_number'] ?></td>
-                                        <td class="text-right"><?= number_format($request['amount']) ?> RWF</td>
-                                    </tr>
-                                    <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Reference Number:</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="ref_number" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Amount:</label>
+                    <div class="col-sm-8">
+                        <input type="number" name="amount" class="form-control" 
+                               value="<?= RoundUp($minimum_saving) ?>" required>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Paid on:</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="paid_at" class="form-control" id="paid_at" 
+                               value="<?= date('Y-m-d') ?>" required>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Month to Save For:</label>
+                    <div class="col-sm-8">
+                        <select name="month_to_save_for" class="form-control" style="width:49%;display:inline-block" required>
+                            <?php for($i=1; $i<=12; $i++): ?>
+                            <option value="<?= $i ?>" <?= $i==$currentMonth?'selected':'' ?>>
+                                <?= date('F', mktime(0,0,0,$i,1)) ?>
+                            </option>
+                            <?php endfor; ?>
+                        </select>
+                        <select name="year_to_save_for" class="form-control" style="width:49%;display:inline-block" required>
+                            <?php for($i=$currentYear; $i<=$currentYear+1; $i++): ?>
+                            <option value="<?= $i ?>" <?= $i==$currentYear?'selected':'' ?>>
+                                <?= $i ?>
+                            </option>
+                            <?php endfor; ?>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal-footer justify-content-between">
-        
-    </div>
-    <script type="text/javascript">
-        $("#savings_request_table").DataTable();
-    </script>
-    <?php
-    return;
-}
-
-$last_saving = first($db, "SELECT id, member_id, sav_amount, month, year FROM saving WHERE member_id = ? ORDER BY year DESC, month DESC", [$_SESSION['user']['member_acc']]);
-if($last_saving){
-    $saving_year = $last_saving['year'];
-    $saving_month = $last_saving['month'];
-    if(12 == $saving_month){
-        $saving_month = 1;
-        $saving_year++;
-    } else {
-        $saving_month++;
-    }
-}
-
-$saving_info = new \DateTime($saving_year."-".($saving_month < 10?"0":"").$saving_month."-01");
-$default_deadline = $saving_info->format("Y-m-t");
-$saving_overdone = first($db, "SELECT a.*,
-                                    COALESCE(b.saving_overdue, '{$default_deadline}') AS saving_overdue,
-                                    b.id AS overdue_id
-                                    FROM (
-                                      SELECT
-                                              '{$saving_year}' AS year,
-                                              '{$saving_month}' AS month
-                                    ) AS a
-                                    LEFT JOIN overdue_settings AS b
-                                    ON a.year = b.year AND a.month = b.month");
-
-$minimum_saving = returnSingleField($db, "SELECT    COALESCE(MAX(a.saving), b.sav_amount) AS required_amount
-                                                    FROM (
-                                                      SELECT  b.saving,
-                                                              a.member_id
-                                                              FROM member_loans AS a
-                                                              INNER JOIN member_loan_settings AS b
-                                                              ON a.id = b.loan_id
-                                                              WHERE a.status = ?
-                                                              AND a.member_id = ?
-                                                      ) AS a
-                                                    LEFT JOIN (
-                                                      SELECT  a.member_id,
-                                                              a.sav_amount
-                                                              FROM saving AS a
-                                                              WHERE a.member_id = ?
-                                                              ORDER BY a.id DESC
-                                                              LIMIT 0, 1
-                                                      ) AS b
-                                                    ON a.member_id = b.member_id
-                                                    ", "required_amount", ["ACTIVE", $_SESSION['user']['member_acc'], $_SESSION['user']['member_acc'] ]);
-
-$class = "green";
-$class_btn = "success";
-$overdone = false;
-$delay_days = 0;
-if(!is_null($saving_overdone) && $saving_overdone){
-    $contribution_date = new \DateTime($saving_overdone['saving_overdue']);
-    $toDay = new \DateTime();
-
-    $required_fines = 0;
-    if($contribution_date->getTimestamp() < $toDay->getTimestamp()){
-        $class = "red";
-        $class_btn = "danger";
-        $overdone = true;
-        $delay = $contribution_date->diff($toDay);
-        $delay_days = $delay->days;
-        $required_fines = $delay_days * 100;
-    }
-}
-?>
-
-<form action="savings/request_contribution.php" method="POST" id="form_apply_loan" >
-    <input type="hidden" name="overdue_id" value="<?= $saving_overdone['overdue_id'] ?>">
-    <input type="hidden" name="fines" value="<?= $required_fines ?>">
-    <input type="hidden" name="days" value="<?= $delay_days ?>">
-    <input type="hidden" name="month" value="<?= $saving_info->format('n') ?>">
-    <input type="hidden" name="year" value="<?= $saving_info->format('Y') ?>">
-    <div class="modal-header bg-<?= $class ?> ">
-        <h4 class="modal-title">
-            <span style="color:white">
-                Contribution for <?= $saving_info->format('F Y') ?>
-                <?php
-                if($required_fines > 0){
-                    ?>
-                    Fines: <?= number_format($required_fines) ?> RWF
-                    <?php
-                }
-                ?>
-            </span>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </h4>
-    </div>
-    <div class="modal-body">
-        <div class="card card-info">
-          <div class="card-body">
-			<div class="form-group row">
-			    <label for="ref_number" class="col-sm-4 col-form-label">
-			    	Reference Number:
-				</label>
-				<div class="col-sm-8">
-			    	<input type="text" name="ref_number" id="ref_number" class="form-control">
-				</div>
-			</div>
-			<div class="form-group row">
-			    <label for="amount" class="col-sm-4 col-form-label">
-			    	Paid Amount:
-				</label>
-				<div class="col-sm-8">
-			    	<input type="text" name="amount" id="amount" class="form-control" value="<?= RoundUp($minimum_saving) ?>">
-				</div>
-			</div>
-
-
-			<div class="form-group row">
-                <label for="paid_at" class="col-sm-4 col-form-label">Paid on:</label>
-
-                <div class="col-sm-8">
-                  <input type="text" name="paid_at" class="form-control pull-right" id="paid_at" value="<?= (new \DateTime())->format("Y-m-d") ?>">
-                </div>
-                <!-- /.input group -->
-            </div>
-
-
-            <?php
-            if($required_fines > 0){
-                ?>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="alert alert-danger">You delayed for <?= $delay_days ?> day<?= $delay_days > 1?"s":"" ?> the fine applied is <?= number_format($required_fines) ?>RWF</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="fine_amount" class="col-sm-4 col-form-label">
-                        Fine Amount:
-                    </label>
-                    <div class="col-sm-8">
-                        <input type="text" name="fine_amount" id="fine_amount" class="form-control" value="<?= RoundUp($required_fines) ?>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="fine_ref_number" class="col-sm-4 col-form-label">
-                        Fine Reference Number:
-                    </label>
-                    <div class="col-sm-8">
-                        <input type="text" name="fine_ref_number" id="fine_ref_number" class="form-control">
-                    </div>
-                </div>
-                <?php
-            }
-            ?>
-
-          </div>
-        </div>
-    </div>
-    <div class="modal-footer justify-content-between">
-        <?php
-        if($overdone){
-            ?>
-            <a href="#" class="btn btn-danger btn-flat btn-sm">Fine Required: <?= number_format($required_fines) ?> RWF</a>
-            <button class="btn btn-sm btn-flat btn-<?= $class_btn ?> submit_button" id="submit_button" type="submit" name="update_signature">Save Bank Slip</button>
-            <?php
-        } else {
-            ?>
-            <button class="btn btn-sm btn-flat btn-<?= $class_btn ?> submit_button" id="submit_button" type="submit" name="update_signature">Save Bank Slip</button>
-            <?php
-        }
-        ?>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
     </div>
 </form>
 
-<script type="text/javascript">
-    $('#paid_at').datepicker({
-        autoclose: true,
-        format: 'yyyy-mm-dd'
-    })
-	$("#form_apply_loan").submit(function(e){
+<script>
+    // Initialize datepicker
+    $('#paid_at').datepicker({autoclose: true, format: 'yyyy-mm-dd'});
+    
+    // Handle form submission
+    $('#form_apply_loan').submit(function(e) {
         e.preventDefault();
         
-        var amount = $("#principal").val()*1;
-        var loan_limit = $("#loan_limit").val()*1;
-
-    	if(loan_limit < amount){
-    		return false;
-    	}
-
-    	var withdrawable_amount = $("#withdrawable_amount").val();
-    	if(withdrawable_amount <= 0){
-    		return false;
-    	}
-
-        var old_data = $("#submit_button").html();
-        //Here make sure to use ajax request to reduce reload operations
-
-        $("#submit_button").html('<i class="fas fa-sync fa-spin"></i> Saving...');
-        $("#submit_button").attr("disabled", "disabled");
-
+        var oldText = $('#submit_button').html();
+        $('#submit_button').html('<i class="fas fa-sync fa-spin"></i> Saving...');
+        $('#submit_button').attr('disabled', 'disabled');
+        
         $.ajax({
-            type: $(this).attr("method"),
-            url: $(this).attr("action"),
+            url: $(this).attr('action'),
+            type: 'POST',
             data: $(this).serialize(),
-            beforeSend: function(){
-                $("#submit_button").html('<i class="fas fa-sync fa-spin"></i> Saving...');
-            },success: function(data){
-                if(data.status == true){
-                    refresh_url = "loans/index.php?member_id=";
-                    refresh_target_containner = "loans_container";
-                    toastr.success(data.message);
-                    $("#modal_member").modal("hide");
+            dataType: 'json',
+            success: function(response) {
+                if (response.status) {
+                    // Show success toast
+                    toastr.success(response.message);
+                    
+                    // Close modal if it exists
+                    $('#modal-default').modal('hide');
+                    
+                    // Reload parent page after short delay
+                    setTimeout(function() {
+                        window.location.href = '../member/savings.php';
+                    }, 1500);
                 } else {
-                    //Here Make sure to notify what happens during the processing
-                    refresh_url = '';
-                    if(data.message){
-                      toastr.warning(data.message);
-                    } else {
-                      toastr.error("The Server Responded with unformatable message");
-                    }
+                    // Show error toast
+                    toastr.error(response.message);
                 }
-                $("#submit_button").html(old_data);
-                $("#submit_button").removeAttr("disabled");
-            }, error: function(err){
-                console.log(err);
-                $("#submit_button").html(old_data);
-                $("#submit_button").removeAttr("disabled");
-                toastr.error("Invalid Response");
+                
+                // Reset button
+                $('#submit_button').html(oldText);
+                $('#submit_button').removeAttr('disabled');
+            },
+            error: function() {
+                toastr.error('An error occurred while processing your request.');
+                $('#submit_button').html(oldText);
+                $('#submit_button').removeAttr('disabled');
             }
         });
     });

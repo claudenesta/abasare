@@ -24,7 +24,7 @@ $fine_types = returnAllData($db, "SELECT id, name, default_amount FROM fine_type
                 <div class="form-group row">
                   <label for="member_id" class="col-sm-4 col-form-label">Member: </label>
                   <div class="col-sm-8">
-                    <select class="form-control select2" id="member_id" name="member_id[]" multiple style="width: 100%;">
+                    <select class="form-control select2" id="member_id" name="member_id[]" style="width: 100%;">
                         <option value=""></option>
                         <?php
                         foreach($members AS $member){
@@ -94,29 +94,39 @@ $fine_types = returnAllData($db, "SELECT id, name, default_amount FROM fine_type
                 data: $(this).serialize(),
                 beforeSend: function(){
                     $("#submit_button").html('<i class="fas fa-sync fa-spin"></i> Saving...');
-                },success: function(data){
-                    if(data.status == true){
-                        refresh_url = "fines/unpaid_fines.php";
-                        refresh_target_containner = "fines_container";
-                        toastr.success(data.message);
-                        $("#modal_member").modal("hide");
+                },
+                
+                
+success: function(data){
+                if(data.status == true){
+                    // 1. Show the success message
+                    toastr.success(data.message);
+
+                    // 2. Hide the pop-up form
+                    $("#modal_member").modal("hide");
+
+                    // 3. RELOAD THE FINES LIST <--- THIS IS THE FIX
+                    $("#savings_container").load("fines/unpaid_fines.php");
+                    
+                } else {
+                    //Here Make sure to notify what happens during the processing
+                    if(data.message){
+                      toastr.warning(data.message);
                     } else {
-                        //Here Make sure to notify what happens during the processing
-                        refresh_url = '';
-                        if(data.message){
-                          toastr.warning(data.message);
-                        } else {
-                          toastr.error("The Server Responded with unformatable message");
-                        }
+                      toastr.error("The Server Responded with unformattable message");
                     }
-                    $("#submit_button").html(old_data);
-                    $("#submit_button").removeAttr("disabled");
-                }, error: function(err){
-                    console.log(err);
-                    $("#submit_button").html(old_data);
-                    $("#submit_button").removeAttr("disabled");
-                    toastr.error("Invalid Response");
                 }
-            });
+                
+                $("#submit_button").html(old_data);
+                $("#submit_button").removeAttr("disabled");
+            },
+            //  /\ /\ /\ THIS IS THE BLOCK TO REPLACE /\ /\ /\
+            error: function(err){
+                console.log(err);
+                $("#submit_button").html(old_data);
+                $("#submit_button").removeAttr("disabled");
+                toastr.error("Invalid Response");
+            }
         });
+    });
 </script>

@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 require_once "../../lib/db_function.php";
 
 $fines = returnAllData($db, "SELECT a.id, a.fine_amount, a.date, a.status,
@@ -8,7 +11,7 @@ $fines = returnAllData($db, "SELECT a.id, a.fine_amount, a.date, a.status,
                             JOIN member b ON a.member_id = b.id
                             JOIN fine_types c ON a.fine_type_id = c.id
                             JOIN users d ON a.user_id = d.id
-                            LEFT JOIN bank_slip_requests e ON a.reference_number = e.ref_number
+                            LEFT JOIN bank_slip_requests e ON a.reference_number = e.ref_number COLLATE utf8mb4_general_ci
                             WHERE a.status IN (?,?,?,?) AND a.member_id = ?", 
                             ["Active", "Pending", "Rejected", "Accepted", $_SESSION['acc']]);
 
