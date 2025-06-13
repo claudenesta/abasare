@@ -4,3 +4,4 @@ composer.lock
 .DS_Store
 *.sql
 !db_changes.sql
+composer.phar
