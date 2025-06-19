@@ -19,6 +19,10 @@
         <li class="<?= $active == "bank-slip"?"active ":"" ?>">
           <a href="/social/bankslip.php"> <i class="fa fa-bank"></i> <span>Bank Slip</span></a>
         </li>
+
+          <li class="<?= $active == "bank-slip"?"active ":"" ?>">
+          <a href="/social/sacial_saving_report.php"> <i class="fa fa-bank"></i> <span>Social Saving report </span></a>
+        </li>
         <!-- <li class="<?= $active == "over-due-setting"?"active ":"" ?>">
           <a href="/social/over_due_settings.php"> <i class="fa fa-minus-circle"></i> <span>Over Due Settings</span></a>
         </li>
