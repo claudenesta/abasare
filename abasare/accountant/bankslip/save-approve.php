@@ -43,14 +43,10 @@ try {
     
     // Save to savings table
     saveData($db,
-        "INSERT INTO saving 
-         SET member_id = ?, sav_amount = ?, month = ?, year = ?, done_at = NOW()",
-        [
-            $request['member_id'],
-            $transaction_info->sav_amount,
-            $request['month_to_save_for'],
-            $request['year_to_save_for']
-        ]
+        "UPDATE saving 
+         SET status = 'Accepted'
+         WHERE ref_number = ?",
+        [$request['ref_number']]
     );
 
     // Update request status

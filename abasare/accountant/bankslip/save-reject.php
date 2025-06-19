@@ -17,7 +17,7 @@ $db->beginTransaction();
 try {
     // Fetch the request
     $request = first($db, "SELECT id, member_id, type, ref_number, amount, data, paid_at, has_fine, fine_data, created_at FROM bank_slip_requests WHERE id = ?", [$_POST['request_id']]);
-    
+
     if (!$request) {
         throw new Exception("Request not found");
     }
@@ -39,10 +39,19 @@ try {
         }
         saveData($db, "UPDATE special_fines SET status = 'Rejected' WHERE id = ?", [$data['ref_id']]);
     }
-    
+
+    if ($request['type'] == 'savings') {
+
+        if (!$request || !isset($request['ref_number'])) {
+            throw new Exception("Invalid saving data");
+        }
+
+        saveData($db, "UPDATE saving SET status = ?, comment = ? WHERE ref_number = ?", ['Rejected', $_POST['comment'], $request['ref_number']]);
+    }
+
     // Update bank slip request status
     saveData($db, "UPDATE bank_slip_requests SET status = ?, comment = ? WHERE id = ?", ["Rejected", $_POST['comment'], $_POST['request_id']]);
-    
+
     $db->commit();
     echo json_encode(['status' => true, "message" => "Bank slip recording process is aborted successfully"]);
     exit;

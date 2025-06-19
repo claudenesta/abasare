@@ -178,21 +178,21 @@ include('menu.php');
 					  $tot=0;
 					  $num=0;
 					  $month=0;
-					   $sql = "SELECT s.year, s.month,sum(s.sav_amount) as gtotal, CONCAT(fname,' ',lname) as firstname FROM `saving` s inner join member m on s.member_id=m.id where s.member_id=? GROUP BY s.year ORDER BY s.year DESC";
+					   $sql = "SELECT s.year_to_save_for, s.month_to_save_for,sum(s.sav_amount) as gtotal, CONCAT(fname,' ',lname) as firstname FROM `saving` s inner join member m on s.member_id=m.id where s.member_id=? GROUP BY s.year_to_save_for ORDER BY s.year_to_save_for DESC";
 					   // echo $sql;
              $info = returnAllData($db, $sql, [$membe_id]);
              // var_dump($info);
              // $quer=mysqli_query($con,$sql);
 					   foreach($info AS $row){
-						   $month=(int)$row['month'];
+						   $month=(int)$row['month_to_save_for'];
 						   $tot+=$row['gtotal'];
 						   $num++;
                ?>
                         <tr>
-                          <td><a href="savings_info.php?m_id=<?php echo $membe_id; ?>&&year=<?php echo $row['year']; ?>">#-<?php echo $num; ?></a></td>
+                          <td><a href="savings_info.php?m_id=<?php echo $membe_id; ?>&&year=<?php echo $row['year_to_save_for']; ?>">#-<?php echo $num; ?></a></td>
                           <td><?php echo $row['firstname']; ?></td>
                           <td><?php echo number_format(ceil($row['gtotal']), 2); ?>  Frw (s)</td>
-                          <td><?php echo $row['year']; ?> </td>
+                          <td><?php echo $row['year_to_save_for']; ?> </td>
                         </tr>
   <?php } ?>
   <tr>

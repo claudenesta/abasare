@@ -39,7 +39,7 @@ $membe_id=$_SESSION['acc'];
 
   //get the first saving year for this memmber
   $today = new \DateTime();
-  $start_year = (int) returnSingleField($db, $sql = "SELECT year FROM saving WHERE member_id = ? ORDER BY year ASC LIMIT 0,1", "year", [$_SESSION['user']['member_acc']]);
+  $start_year = (int) returnSingleField($db, $sql = "SELECT year_to_save_for FROM saving WHERE member_id = ? ORDER BY year_to_save_for ASC LIMIT 0,1", "year_to_save_for", [$_SESSION['user']['member_acc']]);
   // echo $sql;
 
   //Get the last unpaid overdue saving record
@@ -60,10 +60,10 @@ $membe_id=$_SESSION['acc'];
 
 
 // Calculating the next scheduled saving month
-  $last_saving = first($db, "SELECT id, member_id, sav_amount, month, year FROM saving WHERE member_id = ? ORDER BY year DESC, month DESC", [$_SESSION['user']['member_acc']]);
+  $last_saving = first($db, "SELECT id, member_id, sav_amount, month_to_save_for, year_to_save_for FROM saving WHERE member_id = ? ORDER BY year_to_save_for DESC, month_to_save_for DESC", [$_SESSION['user']['member_acc']]);
   if($last_saving){
-    $saving_year = $last_saving['year'];
-    $saving_month = $last_saving['month'];
+    $saving_year = $last_saving['year_to_save_for'];
+    $saving_month = $last_saving['month_to_save_for'];
     if(12 == $saving_month){
       $saving_month = 1;
       $saving_year++;
